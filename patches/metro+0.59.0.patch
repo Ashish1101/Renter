@@ -1,0 +1,16 @@
+diff --git a/node_modules/metro/src/node-haste/DependencyGraph.js b/node_modules/metro/src/node-haste/DependencyGraph.js
+index 1412024..87dc991 100644
+--- a/node_modules/metro/src/node-haste/DependencyGraph.js
++++ b/node_modules/metro/src/node-haste/DependencyGraph.js
+@@ -336,7 +336,10 @@ class DependencyGraph extends EventEmitter {
+       assumeFlatNodeModules = _ref5.assumeFlatNodeModules;
+ 
+     const isPath =
+-      to.includes("/") || from.includes(path.sep + "node_modules" + path.sep);
++      // to.includes("/") || from.includes(path.sep + "node_modules" + path.sep);
++      to.includes('/') ||
++      to === '.' ||
++      from.includes(path.sep + 'node_modules' + path.sep);
+     const mapByDirectory = getOrCreate(
+       this._resolutionCache,
+       isPath ? path.dirname(from) : ""

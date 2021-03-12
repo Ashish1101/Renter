@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "438756471001",
+    "project_id": "mechfinderv1",
+    "storage_bucket": "mechfinderv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438756471001:android:a2aa87ea7ba05bccaccec8",
+        "android_client_info": {
+          "package_name": "com.version1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438756471001-vvahc59o7m6k22235hfngrn91bk01h5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.version1",
+            "certificate_hash": "40a88f8b28a0670a49eb020af4f406ed99e081d6"
+          }
+        },
+        {
+          "client_id": "438756471001-8j5da9q3uup5l8a2g6tqc0vh5n4l3f57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpRcfo96A38BrhKkr9O7azJblbIMSpzas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438756471001-8j5da9q3uup5l8a2g6tqc0vh5n4l3f57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
