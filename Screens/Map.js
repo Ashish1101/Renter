@@ -39,8 +39,7 @@ const Map = () => {
         showsBuildings={true}
        showsTraffic={true}
       
-       followsUserLocation={true}
-      
+        followsUserLocation={true}
         provider={PROVIDER_GOOGLE}
         showsUserLocation={true}
         showsMyLocationButton={false}
@@ -51,6 +50,8 @@ const Map = () => {
           latitudeDelta: 0.00523,
           longitudeDelta: 0.0034,
         }}
+        renderToHardwareTextureAndroid={true}
+        
       ></MapView>
 
       <SearchHeader region={location}  />
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   page: {
     flex:1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   container: {
     flex: 1,

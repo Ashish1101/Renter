@@ -12,7 +12,7 @@ const FinalNavigator = () => {
   // const token = getData('userToken')
   // console.log('token is' , token)
 
-  let token = true
+  let token = null
   
   return (
     <AuthProvider>
