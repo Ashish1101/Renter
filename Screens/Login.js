@@ -1,49 +1,72 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef } from "react";
 import {
   Text,
   View,
-  Image,
   StyleSheet,
   Dimensions,
   SafeAreaView,
+  KeyboardAvoidingView,
 } from "react-native";
 import { Input, Button } from "react-native-elements";
 import { AuthContext } from "../Providers/AuthProvider";
-const width = Dimensions.get("window").width;
-const height = Dimensions.get("window").height;
+import PhoneInput from "react-native-phone-number-input";
+import { Colors } from "../Constants/Colors";
+import { Width, Height } from "../Constants/Dimensions";
+import { primaryButton, socialButton } from "../Constants/ButtonStyles";
+
 const Login = ({ navigation }) => {
-  const {loginWithGoogle} = useContext(AuthContext)
+  const { loginWithGoogle } = useContext(AuthContext);
+  const [value, setValue] = useState("");
+  const [formattedValue, setFormattedValue] = useState("");
+  const phoneInput = useRef(null);
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View style={styles.cont1}>
-          <View>
-            <Text style={styles.headingSize}>Welcome</Text>
-            <Text style={styles.headingSize}>MechFiner</Text>
-          </View>
-          <View>
-            {/* <Image source={require('../assests/car.png')} style={{height:200, width:300}} /> */}
-            <View>
-              <Text style={{ textAlign: "justify", fontSize: 25 }}>
-                Explore new ways to{" "}
-              </Text>
-              <Text style={{ textAlign: "justify", fontSize: 25 }}>
-                find service
-              </Text>
-            </View>
-          </View>
+    <View style={styles.container}>
+      <View style={{ flex: 1, backgroundColor: Colors.primaryColor }}>
+        <Text>For logg</Text>
+      </View>
+      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+        <Button title="Login with google" buttonStyle={styles.socialStyle} />
+        <Text style={{ textAlign: "center", marginBottom: 20 }}>
+          By clicking, you are agree to{" "}
+          <Text style={{ fontWeight: "bold" }}>Terms and conditions</Text>
+        </Text>
+      </View>
+
+      <View style={styles.floatView}>
+        <View>
+          <Text>For Logog</Text>
         </View>
-        <View style={styles.cont2}>
-          <Button
-            title="continue with phone"
-            onPress={() => navigation.navigate("phone")}
-            buttonStyle={styles.btnStyle}
-          />
-          <Button onPress={loginWithGoogle} title="continue with google" buttonStyle={styles.btnStyle}  />
+        <View>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === "android" ? "padding" : "height"}
+          >
+            <PhoneInput
+              ref={phoneInput}
+              defaultValue={value}
+              defaultCode="IN"
+              layout="first"
+              onChangeText={(text) => {
+                setValue(text);
+              }}
+              onChangeFormattedText={(text) => {
+                setFormattedValue(text);
+              }}
+              withDarkTheme
+              // withShadow
+              autoFocus
+              containerStyle={{ width: "89%", height: 50, marginLeft: 18 }}
+              textInputStyle={{ height: 40 }}
+            />
+            <Button
+              title="Sign Up"
+              buttonStyle={styles.btnStyle}
+              onPress={() => navigation.navigate("otp")}
+            />
+          </KeyboardAvoidingView>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -54,25 +77,24 @@ const styles = StyleSheet.create({
   },
   container: {
     display: "flex",
+    flex: 1,
     flexDirection: "column",
-
-    width: width,
-    height: height,
+    width: Width,
+    height: Height,
+  },
+  socialStyle: socialButton,
+  btnStyle: primaryButton,
+  floatView: {
+    display: "flex",
+    flexDirection: "column",
     justifyContent: "space-between",
-  },
-  btnStyle: {
-    backgroundColor: "black",
-    width: width / 1.2,
-    marginHorizontal: 30,
-    height: 45,
-    marginVertical: 5,
-  },
-  cont2: {
-    marginBottom: 50,
-  },
-  cont1: {
-    marginTop: 50,
-    marginHorizontal: 30,
+    position: "absolute",
+    width: Width / 1.2,
+    height: Height / 1.8,
+    backgroundColor: "white",
+    top: "20%",
+    alignSelf: "center",
+    borderRadius: 10,
   },
 });
 
