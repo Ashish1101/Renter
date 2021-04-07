@@ -6,6 +6,7 @@ import Map from "../Screens/Map";
 import OnlineMech from "../Screens/OnlineMech";
 import AfterBooking from "../Screens/AfterBooking";
 import Permission from "../Screens/Permisson";
+import FrontScreen from '../Screens/MainScreenStack/FrontScreen'
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator()
@@ -16,8 +17,8 @@ const MapStackScreen = () => {
    return (
     <Stack.Navigator>
     <Stack.Screen name="map" component={Map} options={{header: () => null}} />
-    <Stack.Screen name="mechanic" component={OnlineMech} />
-    <Stack.Screen name="afterBooking" component={AfterBooking} />
+    <Stack.Screen name="mechanic" component={OnlineMech} options={{header: () => null}} />
+    <Stack.Screen name="afterBooking" component={AfterBooking} options={{header: () => null}}  />
   </Stack.Navigator>
    )
 };
@@ -30,10 +31,21 @@ const PermissionStackScreen = () => {
   )
 };
 
+
+const FrontStackScreen = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerStyle:{elevation:0 , shadowOpacity:0}}}>
+       <Stack.Screen name="frontScreen" component={FrontScreen} />
+       <Stack.Screen name="map" component={MapStackScreen} options={{headerStyle:{elevation:0 , shadowOpacity:0}}} />
+    </Stack.Navigator>
+  )
+}
+
 const MainNavigator = () => {
   return (
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={MapStackScreen} />
+    <Drawer.Navigator initialRouteName="frontScreen">
+      <Drawer.Screen name="frontScreen" component={FrontStackScreen} />
+      {/* <Drawer.Screen name="Home" component={MapStackScreen} /> */}
       <Drawer.Screen name="Permission" component={PermissionStackScreen} options={{DrawerBarLabel: () => null}}  />
     </Drawer.Navigator>
   );

@@ -37,7 +37,7 @@ const Map = () => {
         style={styles.container}
         rotateEnabled={true}
         showsBuildings={true}
-       showsTraffic={true}
+        showsTraffic={true}
       
         followsUserLocation={true}
         provider={PROVIDER_GOOGLE}

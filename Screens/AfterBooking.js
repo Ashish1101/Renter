@@ -1,4 +1,4 @@
-import React, { useContext , useEffect, useState } from 'react'
+import React, { useContext , useEffect, useRef, useState } from 'react'
 import { View , StyleSheet , Dimensions} from 'react-native'
 import {Button, Text} from 'react-native-elements'
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
@@ -20,6 +20,8 @@ const AfterBooking = () => {
         longitude:location.longitude
       }
     ]
+
+    
     // useEffect(() => {
     //   (async () => {
     //       try {
@@ -46,14 +48,16 @@ const AfterBooking = () => {
             style={styles.container}
             provider={PROVIDER_GOOGLE}
             showsUserLocation={true}
-         
             initialRegion={{
                latitude:location.latitude,
                longitude:location.longitude,
                latitudeDelta:0.0423,
                longitudeDelta:0.0234
             }}
+            
             >
+
+            {/* here i want to make only two markers visible on the screen */}
            <Marker coordinate={dest[1]} />
            <Marker coordinate={dest[0]} />
            <MapViewDirections 

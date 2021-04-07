@@ -9,18 +9,14 @@
  import React, { useContext } from "react";
  import { SafeAreaView, StyleSheet, View, Text, StatusBar } from "react-native";
  import { Colors } from "react-native/Libraries/NewAppScreen";
- import { NavigationContainer } from "@react-navigation/native";
- import AuthNavigator from "./Navigator/AuthNavigator";
  import FinalNavigator from "./Navigator/FinalNavigator";
- import MainNavigator from "./Navigator/MainNavigator";
- import { AuthContext, AuthProvider } from "./Providers/AuthProvider";
- import { LocationProvider } from "./Providers/LocationProvider";
- 
+
  const App = () => {
  
    return (
      <>
-      <FinalNavigator  />
+         <StatusBar barStyle='dark-content' backgroundColor="#ffffff" translucent={true} showHideTransition='fade' />
+         <FinalNavigator  />
      </>
    );
  };

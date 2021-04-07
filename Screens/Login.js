@@ -14,12 +14,39 @@ import PhoneInput from "react-native-phone-number-input";
 import { Colors } from "../Constants/Colors";
 import { Width, Height } from "../Constants/Dimensions";
 import { primaryButton, socialButton } from "../Constants/ButtonStyles";
+import {PHONE_AUTH} from '../Graphql/Mutations/AuthMutation'
+import { useMutation } from '@apollo/client'
 
 const Login = ({ navigation }) => {
-  const { loginWithGoogle } = useContext(AuthContext);
+  // const { loginWithGoogle } = useContext(AuthContext);
   const [value, setValue] = useState("");
   const [formattedValue, setFormattedValue] = useState("");
   const phoneInput = useRef(null);
+  // const [phoneAuth , {data , loading , error}] = useMutation(PHONE_AUTH , {
+  //    onCompleted({phoneAuth}) {
+  //      console.log('phoneAtuh' , phoneAuth)
+  //      if(phoneAuth.status === 'pending') {
+  //         navigation.navigate('otp')
+  //      }
+  //    },
+  //    onError({graphQLErrors , stack , extraInfo}) {
+  //      console.log('graphql error' , stack)
+  //      console.log('graphql error' , extraInfo)
+  //    }
+  // })
+
+  // console.log('value ', value)
+
+  // console.log('data from mutation' , data)
+  // console.log('data from mutation' , error)
+  // const phoneLogin = () => {
+  //   phoneAuth({variables:{phoneNumber:value}})
+  //   .then(res => {
+  //     console.log('res' , res)
+  //   }).catch(err => console.log('error in phone input' , err))
+  // }
+
+
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, backgroundColor: Colors.primaryColor }}>
@@ -54,14 +81,14 @@ const Login = ({ navigation }) => {
               }}
               withDarkTheme
               // withShadow
-              autoFocus
+              // autoFocus
               containerStyle={{ width: "89%", height: 50, marginLeft: 18 }}
               textInputStyle={{ height: 40 }}
             />
             <Button
               title="Sign Up"
               buttonStyle={styles.btnStyle}
-              onPress={() => navigation.navigate("otp")}
+              onPress={() => navigation.navigate('otp')}
             />
           </KeyboardAvoidingView>
         </View>

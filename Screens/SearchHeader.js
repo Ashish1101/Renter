@@ -13,11 +13,6 @@ const MapSearchHeader = ({ region }) => {
 
   Geocoder.init('AIzaSyAdg4DBHAoDDd45uSnAeJ5J0ao2YEBK7W4')
 
-  console.log('formatted data' , formattedAddress)
-
-  console.log('place', place)
-
-  console.log('regios' , region)
 
   useEffect(() => {
     (async () => {

@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/771a3ad7-6a43-486a-97f8-33f666b9a0a3/resourceGroups/test123/providers/Microsoft.Web/sites/mechanicfounder",
+    "appService.deploySubpath": "."
+}

@@ -92,7 +92,7 @@ const OtpScreen = ({ navigation }) => {
         </View>
       </View>
       <View style={{ alignItems: "center" }}>
-        <Button title="Continue" buttonStyle={styles.primaryBtn} />
+        <Button title="Continue" buttonStyle={styles.primaryBtn} onPress={() => navigation.navigate('frontScreen')} />
       </View>
        </KeyboardAvoidingView>
     </View>
