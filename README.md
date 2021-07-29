@@ -1,3 +1,3 @@
 # Renter
 
-<img src="/Readme/login.jpg" width="600" height="600" />
+<img src="/Readme/login.jpg" width="400" height="600" />
