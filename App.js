@@ -15,7 +15,7 @@
  
    return (
      <>
-         <StatusBar barStyle='dark-content' backgroundColor="#ffffff" translucent={true} showHideTransition='fade' />
+         <StatusBar barStyle='dark-content'  showHideTransition='fade' />
          <FinalNavigator  />
      </>
    );

@@ -25,7 +25,7 @@ const AfterBooking = () => {
     // useEffect(() => {
     //   (async () => {
     //       try {
-    //         const destination = await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=[${location.latitude},${location.longitude}]&destinations=[${dest.latitude},${dest.longitude}]&key=AIzaSyAdg4DBHAoDDd45uSnAeJ5J0ao2YEBK7W4`)
+    //         const destination = await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=[${location.latitude},${location.longitude}]&destinations=[${dest.latitude},${dest.longitude}]&key=API_KEY`)
     //         console.log('desitnation' , destination)
     //        } catch (err) {
     //          console.log('err ' , err)  
@@ -66,7 +66,7 @@ const AfterBooking = () => {
            mode='DRIVING'
            precision='high'
            destination={dest[0]}
-           apikey={'AIzaSyAdg4DBHAoDDd45uSnAeJ5J0ao2YEBK7W4'}
+           apikey={''}
            strokeWidth={4}
            strokeColor='black'
            />

@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, backgroundColor: Colors.primaryColor }}>
-        <Text>For logg</Text>
+        
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <Button title="Login with google" buttonStyle={styles.socialStyle} />
@@ -62,7 +62,7 @@ const Login = ({ navigation }) => {
 
       <View style={styles.floatView}>
         <View>
-          <Text>For Logog</Text>
+          <Text style={{fontSize:30 , padding:40}}>Welcome Renter</Text>
         </View>
         <View>
           <KeyboardAvoidingView
@@ -117,9 +117,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     position: "absolute",
     width: Width / 1.2,
-    height: Height / 1.8,
+    height: Height / 2,
     backgroundColor: "white",
-    top: "20%",
+    top: "30%",
     alignSelf: "center",
     borderRadius: 10,
   },

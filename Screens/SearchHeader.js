@@ -11,7 +11,7 @@ const MapSearchHeader = ({ region }) => {
   const [formattedAddress, setFormattedAddress] = useState("");
   const [place , setPlace] = useState('')
 
-  Geocoder.init('AIzaSyAdg4DBHAoDDd45uSnAeJ5J0ao2YEBK7W4')
+  Geocoder.init('API_KEY')
 
 
   useEffect(() => {

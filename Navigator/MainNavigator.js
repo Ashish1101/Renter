@@ -7,6 +7,7 @@ import OnlineMech from "../Screens/OnlineMech";
 import AfterBooking from "../Screens/AfterBooking";
 import Permission from "../Screens/Permisson";
 import FrontScreen from '../Screens/MainScreenStack/FrontScreen'
+import Icon from 'react-native-vector-icons/Entypo';
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator()
@@ -43,11 +44,27 @@ const FrontStackScreen = () => {
 
 const MainNavigator = () => {
   return (
-    <Drawer.Navigator initialRouteName="frontScreen">
-      <Drawer.Screen name="frontScreen" component={FrontStackScreen} />
-      {/* <Drawer.Screen name="Home" component={MapStackScreen} /> */}
-      <Drawer.Screen name="Permission" component={PermissionStackScreen} options={{DrawerBarLabel: () => null}}  />
-    </Drawer.Navigator>
+    <Tab.Navigator initialRouteName="frontScreen">
+      <Tab.Screen name="frontScreen" component={FrontStackScreen} options={{
+					tabBarIcon: ({ focused }) => (
+						<Icon
+							name='home'
+							size={30}
+							color={`${focused ? "#232423" : "#748c94"}`}
+						/>
+					),
+				}} />
+      {/* <Tab.Screen name="Home" component={MapStackScreen} /> */}
+      <Tab.Screen name="Permission" component={PermissionStackScreen} options={{TabBarLabel: () => null}} options={{
+					tabBarIcon: ({ focused }) => (
+						<Icon
+							name='user'
+							size={30}
+							color={`${focused ? "#232423" : "#748c94"}`}
+						/>
+					),
+				}}  />
+    </Tab.Navigator>
   );
 };
 
