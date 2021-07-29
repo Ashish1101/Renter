@@ -1,5 +1,9 @@
 <h1>Renter</h1>
 
+# Renter uses Google Maps Api for
+### Geocoding
+### Time Calculation
+### Distance Matrix
 
 
 <div style="display:flex , margin-right:10">
