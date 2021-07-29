@@ -1,4 +1,4 @@
 # Renter
 
-#![](Readme/login.jpg)
-<img src="/Readme/login.jpg" width="100" height="100" />
+# ![](Readme/login.jpg)
+<img src="/Readme/login.jpg" width="250" height="250" />
